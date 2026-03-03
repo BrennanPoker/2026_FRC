@@ -9,7 +9,7 @@ def make_statement(statement, decoration):
     """Emphasises heading by adding decoration
     at the start and end"""
 
-    return f"{decoration * 3} {statement} {decoration * 3}"
+    return f"\n{decoration * 3} {statement} {decoration * 3}\n"
 
 
 def yes_no(question):
@@ -339,14 +339,14 @@ year = today.strftime("%Y")
 # heading / strings...
 main_heading_string = make_statement(statement=f"Fund Raising Calculator "
                 f"({product_name}, {day}/{month}/{year})", decoration="=")
-quantity_string = f"Quantity being made: {quantity_made}"
+quantity_string = f"\nQuantity being made: {quantity_made}"
 variable_heading_string = make_statement(statement="Variable Expenses", decoration="-")
-variable_subtotal_string = f"Variable Expenses Subtotal: ${variable_subtotal:.2f}"
+variable_subtotal_string = f"\nVariable Expenses Subtotal: ${variable_subtotal:.2f}"
 
 # set up strings if we have fixed costs
 if has_fixed == "yes":
     fixed_heading_string = make_statement(statement="Fixed Expenses", decoration="-")
-    fixed_subtotal_string = f"Fixed Expenses Subtotal: {fixed_subtotal:.2f}"
+    fixed_subtotal_string = f"\nFixed Expenses Subtotal: {fixed_subtotal:.2f}"
 
 # set fixed cost strings to blank if we don't have fixed costs
 else:
@@ -354,10 +354,10 @@ else:
     fixed_subtotal_string = "Fixed Expenses Subtotal: $0.00"
 
 selling_price_heading = make_statement(statement= "Selling Price Calculations", decoration="-")
-profit_goal_string = f"Profit Goal: ${target:.2f}"
+profit_goal_string = f"\nProfit Goal: ${target:.2f}"
 sales_target_string = f"\nTotal Sales Needed: ${sales_target:.2f}"
 
-minimum_price_string = f"Minimum Selling Price: ${selling_price:.2f}"
+minimum_price_string = f"\nMinimum Selling Price: ${selling_price:.2f}"
 suggested_price_string = make_statement(statement=f"Suggested Selling Price:"
                                                   f"${suggested_price:.2f}", decoration="*")
 
